@@ -107,8 +107,9 @@ def add_pos_and_neg_labels(data):
 def randomize_subset(data):
   #Grabbing subset of 100,000 from total dataset: 50% Positive 50% Negative:
   data = data.sample(frac = 1).reset_index(drop = True)
-  data = data[data['Label'] == 0][:50000]
-  data = data._append(data[data['Label'] == 1][:50000])
+  data1 = data[data['Label'] == 0][:50000]
+  data2 = data[data['Label'] == 1][:50000]
+  data = data1._append(data2)
   data = data.reset_index(drop = True)
 
   return data
