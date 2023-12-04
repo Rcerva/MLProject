@@ -6,7 +6,9 @@ import re
 import contractions
 import nltk
 from nltk.corpus import stopwords
+nltk.download('stopwords')
 from nltk.stem import WordNetLemmatizer
+nltk.download('stopwords')
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
