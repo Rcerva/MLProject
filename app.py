@@ -20,13 +20,16 @@ import pickle
 
 def main(): 
   df = pd.read_csv('Reviews.csv', sep=',', header = 0)
+  print()
   print(df.head(5))
 
   # Preparing for pre-process
+  print()
   print("Preparing Pre-Process")
   data = format_data(df)
   print(data.head(20))
 
+  print()
   print("Pre-Processing")
   # PREPROCESSING DATA
   data = preprocess_data(data)
@@ -34,15 +37,18 @@ def main():
 
   # Initialize a Linear Support Vector Classification (LinearSVC) model
   model = LinearSVC(random_state = 0)
-
+  
+  print()
   print("Feature Extraction")
   # FEATURE EXTRACTION
   report = feature_extraction(data, model)
 
   # Print the classification report
+  print()
   print(report)
 
   save_model(model)
+
 
 
 def save_model(model):
@@ -54,9 +60,6 @@ def save_model(model):
     pickle.dump(model, file)
   
   print("Model Saved!")
-
-
-
 
 
 
