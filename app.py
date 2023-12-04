@@ -142,10 +142,16 @@ def add_pos_and_neg_labels(data):
 
 
 def obtain_subset(data):
-  # Grabbing subset of 100,000 from total dataset: 50% Positive 50% Negative:
+  # Grabbing random subset of 100,000 from total dataset: 50% Positive 50% Negative:
   data = data.sample(frac = 1).reset_index(drop = True)
+
+  # 50,000 negative
   data1 = data[data['Label'] == 0][:50000]
+
+  # 50,000 positive
   data2 = data[data['Label'] == 1][:50000]
+
+  # Combine the negatives and positives
   data = data1._append(data2)
   data = data.reset_index(drop = True)
 
