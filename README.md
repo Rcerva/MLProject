@@ -1,13 +1,17 @@
 # MLProject
 Sentiment Analysis Project
 
-#Update Submission:
-The following information is required for the project update:
+#Final Submission:
+For the project submission, we need the following information. Unlike the project update and proposal, you do not strictly have to adhere to these requirements, except the ones in bold. You can ignore some of the questions if they do not apply to you.
 
-1. If you have lost a team member because that person has dropped the course, (or for any other reason) are you planning to make any design changes to your proposed project? If yes, describe the changes.
-2. The status of the data: Is it usable for a machine-learning model in its current state?
-3. A snapshot of the data, if you have it. For example, if you have downloaded your data as a table, you take a screenshot of the table and paste it into your document. This will vary depending on the project that you have chosen, contact me if you need clarifications.
-4. What does your timeline look like now?
-5. Are you planning to use any new algorithm for your project?
+The source code: could be a link to an accessible code repository like github or you could attach the code in a zip file
+The clean dataset: Something that can directly be used for training/validation: This would most likely be in the form of a csv/tsv file (or any other supported methods)
+And a report mentioning the following:
 
-6* Along with these, for extra credits, you can zip and upload your current code with the submission. You may also send the link to your personal github or code repository that hosts your project code.
+Some examples of your model doing predictions: For example, you input a particular test data and it predicts an output (choose an example that works to make your case stronger)
+If you made changes to your plans since the project update, what are they?
+A description (about 1 page) of everything you had to do to make the project work: E.g. (got the data from here, cleaned the data, changed the data from strings/ categories to numbers, created training/test set, etc.)
+Which model(s) did you choose? (Something that some of you mentioned during the project proposal)
+Did you compare your ML model (e.g. kNN) with any other model? How can you say that your model(s) worked?
+If your model gave you unsatisfactory results, what do you think are the reasons?
+What improvements do you think can be made to your project, and what would you have done differently?
