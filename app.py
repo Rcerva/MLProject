@@ -14,6 +14,7 @@ nltk.download('wordnet')
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
+from sklearn.linear_model import LogisticRegression
 
 from sklearn.metrics import classification_report
 
@@ -38,17 +39,31 @@ def main():
 
   # Initialize a Linear Support Vector Classification (LinearSVC) model
   model = LinearSVC(random_state = 0)
+  sigmoid_model = LogisticRegression(solver='liblinear')
   
   print()
   print("Feature Extraction")
   # FEATURE EXTRACTION
   report = feature_extraction(data, model)
+  test_model = feature_extraction(data, sigmoid_model)
 
   # Print the classification report
   print()
-  print(report)
+  print("***REPORT***\n")
+  print('1) Results for Negative reviews\n')
+  print('      SVM Model\t\t\t\t     Logistic Regression Model')
+  print(f" - Precision: {report['0']['precision']}\t - Precision: {test_model['0']['precision']}\n - Recall: {report['0']['recall']}\t\t - Recall: {test_model['0']['recall']}\n\n")
+  print('2) Results for Positive reviews\n')
+  print('      SVM Model\t\t\t\t     Logistic Regression Model')
+  print(f" - Precision: {report['1']['precision']}\t - Precision: {test_model['1']['precision']}\n - Recall: {report['1']['recall']}\t\t - Recall: {test_model['1']['recall']}\n")
+
+  print(f"3) Logistic vs SVM model")
+  print(f"Logistic regression model's accuracy: {test_model['accuracy']}")
+  print(f"SVM's model's accuracy: {report['accuracy']}\n")
+
 
   save_model(model)
+  print('End of program...')
 
 
 
@@ -201,7 +216,6 @@ def feature_extraction(data, model):
   report = classification_report(Y_test, y_test_pred, output_dict = True)
 
   return report
-
 
 
 if __name__=="__main__": 
