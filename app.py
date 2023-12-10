@@ -8,7 +8,8 @@ import nltk
 from nltk.corpus import stopwords
 nltk.download('stopwords')
 from nltk.stem import WordNetLemmatizer
-nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -61,6 +62,15 @@ def save_model(model):
   
   print("Model Saved!")
 
+def save_idfvector(idfvector):
+  # Save model as pickle file
+  sentiment_analysis_idfvector = "idfvector.pkl"  
+
+  # Write Pickle file 
+  with open("SentimentAnalysisModel/" + sentiment_analysis_idfvector, 'wb') as file:  
+    pickle.dump(idfvector, file)
+  
+  print("IDF-vector Saved!")
 
 
 # ---PREPROCESSING DATA---
@@ -173,6 +183,9 @@ def feature_extraction(data, model):
 
   # Transform the training data into TF-IDF features
   tf_x_train = tf_vectorizer.fit_transform(X_train)
+
+  #Save IDF vector for use in predictions
+  save_idfvector(tf_vectorizer)
 
   # Transform the testing data using the same vectorizer
   tf_x_test = tf_vectorizer.transform(X_test)
