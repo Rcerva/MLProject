@@ -1,17 +1,12 @@
-# MLProject
-Sentiment Analysis Project
+# Sentiment Analysis Project
+# Description
+This is a Linear Support Vector Classification (LinearSVC) model that utilizes Term Frequency-Inverse Document Frequency (TF-IDF) vectorization for feature extraction. This model is trained for the purpose of performing sentiment analysis on a product review and determining if the review is positive (1) or negative (0).
+# Training the model
+To train and evaluate the model, first make sure to extract the `condense_Reviews` file from `condense_Reviews.zip` and put it in the root folder. Then, rename the file to `Reviews.csv`.
+Lastly, run the file `app.py`.
+This will save the model and IDF-vector under the folder `SentimentANalysisModel` and output a classification report for the model which includes its accuracy.
 
-#Final Submission:
-For the project submission, we need the following information. Unlike the project update and proposal, you do not strictly have to adhere to these requirements, except the ones in bold. You can ignore some of the questions if they do not apply to you.
-
-The source code: could be a link to an accessible code repository like github or you could attach the code in a zip file
-The clean dataset: Something that can directly be used for training/validation: This would most likely be in the form of a csv/tsv file (or any other supported methods)
-And a report mentioning the following:
-
-Some examples of your model doing predictions: For example, you input a particular test data and it predicts an output (choose an example that works to make your case stronger)
-If you made changes to your plans since the project update, what are they?
-A description (about 1 page) of everything you had to do to make the project work: E.g. (got the data from here, cleaned the data, changed the data from strings/ categories to numbers, created training/test set, etc.)
-Which model(s) did you choose? (Something that some of you mentioned during the project proposal)
-Did you compare your ML model (e.g. kNN) with any other model? How can you say that your model(s) worked?
-If your model gave you unsatisfactory results, what do you think are the reasons?
-What improvements do you think can be made to your project, and what would you have done differently?
+# Testing the model
+While simply running `app.py` already tests the model and even outputs a report for its performance, the model can also be tested with user input.
+To do so, only after having already ran `app.py` before, run the file `test_model.py`. The program will ask for you to input a review so that the model can predict if it is positive or negative.
+Type out the review you want to test and press enter. The output will be either "1 (Positive)" or "0 (Negative)".
